@@ -31,7 +31,6 @@ h2.tm-section-title {
 }
 
 .flex-item > img {
-    width: 90%;
     object-fit: none;
 }
 footer {
@@ -42,6 +41,7 @@ footer {
 .box.box-bg h2:hover {
 background-color: lightskyblue;
 color: white;
+font-weight: bold;
 }
 
 p::first-letter {
@@ -172,7 +172,6 @@ section .padding-medium ol li:nth-child(1) a:after, ol li:nth-child(3) a::after 
 .btn.btn-primary.submit-btn:hover {
     color: white;
     background-color: lightskyblue;
-    border-color: lightskyblue;
 }
 
 .tm-nav-item:hover {
@@ -186,4 +185,13 @@ section::before {
     height: 0;
     border-top: 30px solid lightskyblue;
     border-right: 350px solid transparent;
+}
+div#about.tm-content-box::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 30px solid lightskyblue;
+    border-right: 350px solid transparent;
+    z-index:1;
 }
