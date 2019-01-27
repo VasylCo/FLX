@@ -8,8 +8,8 @@
 
     <!-- Styles should be switched here: -->
 
-    <link rel="stylesheet" type="text/css" href="css/style1.css">
-    <!-- <link rel="stylesheet" type="text/css" href="css/style2.css"> -->
+     <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/style2.css"> -->
 
     <title>Explore the world of ocean</title>
   </head>
@@ -193,7 +193,23 @@
           <h1>CONTACT US</h1>
           <h4>For any questions you may have, you can write us:</h4>
 
-          <!-- TODO: write form fields -->
+          <form action="#contact" method="get" class="contact-form-section">
+            <div class="form-wrapper">
+            <div class="name-input">
+              <h5>Full name<sup>*</sup></h5>
+              <input type="text">
+            </div>
+            <div class = "mail-input"> 
+              <h5>Email adress<sup>*</sup></h5>
+              <input type="email" id="contact_email" name="contact_email" >
+            </div>
+          </div>
+            <div class = "message-input">
+              <h5>Write your message below</h5>
+              <textarea id="contact_message" name="contact_message" rows="7" ></textarea>
+            </div>          
+            <button type="submit" class="send-btn">Send</button>  
+          </form>
 
         </section>
       </main>
