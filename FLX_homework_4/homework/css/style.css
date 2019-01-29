@@ -1,0 +1,137 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    background-color: #F3F3F3;
+    margin: 0;
+}
+body span {
+    font-weight: 800;
+}
+header {
+    position: relative;
+    background-image: url(../img/sample2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    color: #ffff;
+}
+header .header-top {
+    letter-spacing: 3px;
+    padding: 30px;
+}
+nav {
+    text-align: right;
+}
+nav a {
+    text-decoration: none;
+}
+header nav {
+    margin-top: -15px;
+}
+header nav a {
+    color: #ffff;
+    padding-left: 30px;
+}
+.header-content-section {
+    position: relative;
+    top: 110px;
+}
+.header-content-section  h1 {
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: normal;
+    font-size: 300%;
+    
+}
+.header-content-section  h1 span {
+    font-size:200%;
+}
+.header-content-section p {
+    text-align: center;
+    
+}
+.header-buttons-area{
+    position: absolute;
+    width: 100%;
+    top: 240px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+}
+.header-buttons-area a {
+    text-align: center;
+    color: white;
+    background-color: #000000;
+    padding: 10px 50px 10px 50px;
+    border: 1px solid white;
+    opacity: 0.5;
+}
+.header-buttons-area div {
+    margin: 0 auto;
+}
+.header-articles::before {
+    margin-top: 0px;
+    content: "";
+    overflow: hidden;
+    background-image: linear-gradient(to bottom left, #000000 0%, #000000 50%, transparent 50%);
+    position: absolute;
+    width: 100%;
+    height: 130px;
+    left: 0;
+}
+main {
+    margin-top:-10px;
+    padding: 0px 20px 0px 20px
+}
+.header-articles div {
+    background-color:transparent;
+    position: relative;
+    z-index:1;
+}
+.header-articles .right {
+    color: #ffffff;
+    margin-left:50%;
+}
+.header-articles .left {
+    margin-right: 50%;
+    color: #000000;
+}
+.features-articles-section{
+    margin-top: 50px;
+}
+.features-articles-section h3{
+    text-align: center;
+    font-weight: normal;
+}
+.container {
+    margin-top:20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.container p{
+    text-align: center;
+    padding-top:30px;
+}
+.left-side-content{
+    background-image: url(../img/sample.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color:#ffffff;
+    
+}
+.right-side-content {
+    margin-left: 70px;
+}
+.explore-section {
+    margin-top:20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color:#ffffff;
+}
+.explore-article{
+    width: 200px;
+    margin: 0 auto;
+}
