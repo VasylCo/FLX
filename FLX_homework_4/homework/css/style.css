@@ -134,7 +134,6 @@ main {
     background-color:#ffffff;
 }
 .explore-article{
-    /*border: 1px solid black;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 15px;
     width: 200px;
@@ -156,7 +155,7 @@ main {
     padding-top:20px;
     background-color:#F3F3F3;
 }
-.subscribe-section, .explore-section, .info-section{
+.subscribe-section, .info-section{
     padding:20px;
 }
 .subscribe-section form{
