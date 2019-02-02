@@ -1,0 +1,245 @@
+:root {
+  background: #0b192f;
+}
+body {
+  margin: 0 auto;
+  max-width: 1400px;
+  font-family: roboto;
+  font-size: 14px;  
+  padding:0 10px
+}
+h1 {
+  font-size:300%;
+  color:#fff;
+  font-weight: lighter;
+}
+header {
+  display:flex;
+  background:#152C4C;
+}
+header div {
+  flex-grow: 1;
+  display:inherit;
+  align-items: center;
+  padding: 0 20px;
+}
+header .logo span{
+  color: #B71757;
+}
+header .nav {
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+header nav a {
+  font-size:x-large;
+  color:#fff;
+  font-weight: lighter;
+  text-decoration: none;
+  padding:40px 20px;
+}
+header nav a:hover {
+  background:rgba(184, 184, 184, 0.2)
+}
+main {
+  margin-top:30px;
+  display:flex;
+}
+main p {
+  line-height: 1.6;
+}
+main .posts {
+  display:inherit;
+  flex-direction: column;
+  max-width: 75%;
+  margin-right:15px;
+}
+main .travel-blog {
+  display:inherit;
+  flex-direction:column;
+  max-width:25%;
+  margin-left:15px;
+}
+.post-1 {
+	background: #B71757;
+}
+.post-2 {
+	background: #0D7E71;
+}
+.post-3 {
+	background: #b1660e;
+}
+.post-4 {
+	background: #d12767;
+}
+.post-5 {
+	background: #2d95bb;
+}
+.post-article {
+  display:inherit;
+}
+.post-article .wrapper {
+  display:inherit;
+  flex-direction: row;
+}
+main .posts .post-article:nth-child(even) .wrapper {
+  flex-flow:row-reverse;
+}
+main .posts .post-article:nth-child(even) .wrapper .post-text {
+  flex-flow: row-reverse;
+  text-align: right;
+}
+.post-article .wrapper:hover {
+  cursor: pointer;
+  filter: opacity(70%);
+}
+.post-article .post-img, .post-text {
+  display:inherit;
+  flex:1 1 0;
+  width: 50%;
+}
+.post-article .post-text {
+  display:inherit;
+  color:#fff;
+  font-weight: lighter;
+  opacity:0.8;
+  font-size: 1.2vw;
+}
+.post-text div {
+  display: inherit;
+  flex-flow: column;
+  padding: 2vw;
+}
+.post-article .post-text h2 {
+  color:#fff;
+  font-weight: lighter;
+  font-size: 300%;
+  margin:0;
+}
+.post-article .post-text .post-date {
+  color: #fff;
+  opacity:0.5;
+  padding:20px;
+}
+.post-article .post-text .post-date h3{
+  font-size:200%;
+  font-weight: lighter;
+}
+.post-article .post-text .post-date h2, h3 {
+  margin:0;
+}
+.post-article img {
+  object-fit: cover;
+  width: 100%;
+  height:100%;
+}
+.travel-blog .blog-post {
+  display: inherit;
+  margin-bottom:30px;
+  flex-direction: column;
+  background: #fff;
+}
+.travel-blog .blog-post .blog-post-image img {
+  object-fit: cover;
+  width: 100%;
+  height:100%;
+}
+.travel-blog .blog-post .blog-post-text {
+  padding:2vw;
+  font-size:1.2vw;
+}
+.travel-blog h2 {
+  font-size: xx-large;
+  font-weight: lighter;
+  margin: 0;
+}
+footer {
+  font-weight: 300;
+  justify-content:space-between;
+  padding: 40px;
+  margin-top:30px;
+  display: flex;
+  background: #162b4d;
+}
+footer div {
+  display:inherit;
+  color:#fff;
+  opacity:0.2;
+}
+@media screen and (max-width: 768px) {
+  header, .post-article, footer {
+    display:block;
+  }
+  h1 {
+    margin: 0;
+    padding: 5vh 0;
+    font-size: 200%;
+  }
+  header div {
+    text-align: center;
+  }
+  header .nav {
+    display: none;
+  }
+  header .logo::before {
+    display: block;
+    width: 50px;
+    cursor:pointer;
+    margin: auto;
+    padding-top: 2vh;
+    content: "\2630";
+    color:#fff;
+  }
+  main {
+    margin-top: 20px;
+  }
+  
+  .post-article .wrapper .post-text, .post-article .wrapper .post-img {
+    width:100%;
+    height: 50%;
+    font-size:18px;
+    display: block;
+  }
+  .travel-blog .blog-post .blog-post-text {
+    font-size:18px;
+  }
+  .wrapper .post-text div {
+    text-align:left;
+    padding: 4vw;
+  }
+  .post-text .post-date h2, .post-text .post-date h3 {
+    text-align: center;
+  }
+  main .posts {
+    max-width: 60%;
+    margin-right: 10px;
+  }
+  main .posts .post-article .wrapper {
+    display: block;
+    max-width: 100%;
+    text-align: left;
+  }
+  main .travel-blog {
+    max-width: 40%;
+    margin-left:10px;
+  }
+  .travel-blog .blog-post {
+    display: inherit;
+    margin-bottom: 20px;
+  }
+  footer {
+    padding: 30px;
+  }
+  footer div {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px ) {
+  main {
+    display: block;
+  }
+  main .posts, main .travel-blog {
+    max-width: 100%;
+    margin:0;
+  }
+}
+
