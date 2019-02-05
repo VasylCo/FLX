@@ -1,6 +1,6 @@
 function Assign (min, max, msg) {
     var temp = parseFloat(prompt(`please, input ${msg}:`));
-    if (isNaN(parseFloat(temp)) && !isFinite(temp)) {
+    if (isNaN((temp)) && !isFinite(temp)) {
         alert('invalid data');
         return false;
     } else if(temp<min || temp>max) {
@@ -37,6 +37,6 @@ function Discount() {
     alert(`    Price without discount: ${Result(Account.price)} 
     Discount: ${Result(Account.discount)}%
     Price with discount: ${Result(Account.withDiscount)}
-    Saved:  ${Result(Account.saved)}`)
+    Saved:  ${Result(Account.saved)}`);
 }
 Discount();
