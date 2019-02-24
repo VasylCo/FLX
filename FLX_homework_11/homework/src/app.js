@@ -1,41 +1,40 @@
-let rootNode = document.getElementById('root');
 const zero = 0;
 const maxListNumber = 10;
 let listItems = 0;
+let dragEl = null;
 
-
-
-//DaD implementation
-let dragSrcEl = null;
-
-function handleDragStart(e) {
-  // Target (this) element is the source node.
-  
-
-  dragSrcEl = this;
-
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/html', this.innerHTML);
+function allowDrop(e) {
+    e.preventDefault();
 }
 
-function handleDrop(e) {
-    // this/e.target is current target element.
-  
+function dragStart(e) {
+    dragEl = this;
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function dragDrop(e) {
     if (e.stopPropagation) {
-      e.stopPropagation(); // Stops some browsers from redirecting.
+        e.stopPropagation();
     }
-  
-    // Don't do anything if dropping the same column we're dragging.
-    if (dragSrcEl !== this) {
-      // Set the source column's HTML to the HTML of the columnwe dropped on.
-      dragSrcEl.innerHTML = this.innerHTML;
-      this.innerHTML = e.dataTransfer.getData('text/html');
+    if (dragEl !== this) {
+        dragEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
     }
-  
+    let labels = document.querySelectorAll('.container');
+    for (let i = 0; i< labels.length; i++) {
+        labels[i].classList.remove('over');
+    }
     return false;
-  }
+}
 
+function dragEnter(e) {
+    this.classList.add('over');
+}
 
+function dragLeave(e) {
+    this.classList.remove('over');
+}
 
 function inputChange() {
     let input = document.getElementById('new-task').value;
@@ -45,7 +44,7 @@ function inputChange() {
 }
 
 function listControl(action) {
-    action ? listItems++ : listItems --;
+    action ? listItems++ : listItems--;
     if (listItems >= maxListNumber) {
         document.getElementById('new-task').setAttribute('disabled', 'true');
         document.getElementById('new-task').value = '';
@@ -54,7 +53,7 @@ function listControl(action) {
     } else {
         document.getElementById('new-task').removeAttribute('disabled');
         document.getElementById('message').style.display = 'none';
-        
+
     }
 }
 
@@ -62,9 +61,11 @@ function addNewListItem(text) {
     let newLabel = document.createElement('label');
     newLabel.setAttribute('draggable', 'true');
     newLabel.setAttribute('class', 'container');
-    newLabel.setAttribute('ondragover', 'allowDrop(event)');
-    newLabel.addEventListener('dragstart', handleDragStart, false);
-    newLabel.addEventListener('drop', handleDrop, false);
+    newLabel.addEventListener('dragover', allowDrop, false);
+    newLabel.addEventListener('dragstart', dragStart, false);
+    newLabel.addEventListener('drop', dragDrop, false);
+    newLabel.addEventListener('dragover', dragEnter, false);
+    newLabel.addEventListener('dragleave', dragLeave, false);
     newLabel.innerHTML = `<input type="checkbox" onchange = "disableCheckbox(this)")>
     <i class="material-icons checkmark">check_box</i><i class="material-icons uncheckmark">
     check_box_outline_blank
@@ -85,12 +86,11 @@ function deleteListItem(element) {
     }
     listControl(false);
 }
+
 function disableCheckbox(me) {
     me.disabled = true;
-    me.nextElementSibling.style.display='block';
+    me.nextElementSibling.style.display = 'block';
 }
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+
 document.getElementById('add-button').addEventListener('click', addNewListItem);
 document.getElementById('new-task').addEventListener('input', inputChange);
