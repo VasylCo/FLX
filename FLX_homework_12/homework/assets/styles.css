@@ -1,0 +1,13 @@
+.hidden {
+    display: none;
+}
+.disabled {
+    pointer-events: none;
+}
+ ul {
+     list-style: none;
+ }
+
+ .description, img {
+     cursor: pointer;
+ }
